@@ -28,13 +28,18 @@ function addPopUp(feature, layer){
 	}
 
 
-	if (osmURL != "") {
+	if (feature.properties.building){
 		popupTxt += `</br></br><b>View this <i>movie theater<i> on <a target="_blank" href=${osmURL}>OSM</a>!<b>`
+	}else if(feature.properties.highway){
+		popupTxt += '</br></br><b>This is a <i>road<i><b>'
+	}else if(feature.properties.footway){
+		popupTxT += '</br></br><b>This is a sidewalk<b>'
 	}
 	layer.bindPopup(popupTxt);
 }
 
 function addStyle(feature, layer){
+if(feature.properties.building){
 	switch(feature.properties.building){
 		case "house":
 			return houseStyle;
@@ -64,7 +69,7 @@ function addStyle(feature, layer){
 			return otherStyle;
 			break;
 	}
-
+}else if(feature.properties.highway){
 	switch(feature.properties.highway){
 		case "railway": 
 			return railwayStyle;
@@ -73,7 +78,7 @@ function addStyle(feature, layer){
 			return otherStyle;
 			break;
 	}	
-
+}else if(feature.properties.footway){
 	switch(feature.properties.footway){
 		case "sidewalk":
 			return sidewalkStyle;
@@ -85,6 +90,9 @@ function addStyle(feature, layer){
 			return otherStyle;
 			break;
 	}
+}else{
+	return otherStyle;
+}
 }
 	
 function addGJLayer(GJson) {
