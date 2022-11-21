@@ -63,7 +63,7 @@ if(feature.properties.building){
 			return serviceStyle;
 			break;
 		default:
-			return buildingStyle;
+			return buildingsStyle;
 			break;
 	}
 }else if(feature.properties.highway){
