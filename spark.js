@@ -62,11 +62,8 @@ if(feature.properties.building){
 		case "service":
 			return serviceStyle;
 			break;
-		case "cinema":
-			return otherStyle;
-			break;
 		default:
-			return otherStyle;
+			return buildingStyle;
 			break;
 	}
 }else if(feature.properties.highway){
