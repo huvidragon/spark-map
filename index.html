@@ -112,7 +112,7 @@
 
 		        var button2 = L.DomUtil.create('a', 'leaflet-control-button', container);
 		        L.DomEvent.disableClickPropagation(button2);
-		        L.DomEvent.on(button2, 'click', function()){
+		        L.DomEvent.on(button2, 'click', function(){
 		        	if(map.getZoom() < 14) {
 		        		alert("Please zoom in!")
 		        	} else {
