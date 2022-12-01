@@ -143,7 +143,7 @@ success: function (response) {
 		/* If adding the layer to the map, be sure to give it a name! */
 		
 		lyrControl.addOverlay(newLayer, "Overpass Query");
-		alert("Your layer has been added to the map!");
+		alert("Your layer has been added to the map! with " + overpass.features.length +" features !");
 	}
 }
 });
