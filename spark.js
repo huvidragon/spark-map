@@ -122,7 +122,7 @@ error: function (e) {
 	alert("A " + e.status + " error occurred while processing your request! The error is: " + e.statusText + ".")
 	console.log("XML reading Failed: ", e);
 },
-
+var layerCount = 0;
 success: function (response) {
 	output = response;
 	var overpassGJ = osmtogeojson(response);
@@ -144,8 +144,9 @@ success: function (response) {
 		var query = window.prompt("Layer Name?", 'New Layer');
 		if(query == null || query == ""){
 			query="New Layer";
+			layerCount++;
 		}
-		lyrControl.addOverlay(newLayer,query);
+		lyrControl.addOverlay(newLayer,query,layerCount);
 		alert("Your layer has been added to the map! with " + overpassGJ.features.length +" features !");
 	}
 }
