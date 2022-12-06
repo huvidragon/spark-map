@@ -141,8 +141,11 @@ success: function (response) {
 		//lyrControl.addLayer(newLayer);
 
 		/* If adding the layer to the map, be sure to give it a name! */
-		
-		lyrControl.addOverlay(newLayer, "Overpass Query");
+		var query = window.prompt("Layer Name?", 'New Layer');
+		if(query == null || query == ""){
+			query="New Layer";
+		}
+		lyrControl.addOverlay(newLayer,query);
 		alert("Your layer has been added to the map! with " + overpassGJ.features.length +" features !");
 	}
 }
