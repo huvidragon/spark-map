@@ -1,5 +1,5 @@
 # spark-map
-[Web map](https://spark-stl-geo.github.io/spark-map) template using Leaflet
+[Web map](https://huvidragon.github.io/spark-map) template using Leaflet
 
 All data is (c)[OpenStreetMap](https://openstreetmap.org) Contributors
 
